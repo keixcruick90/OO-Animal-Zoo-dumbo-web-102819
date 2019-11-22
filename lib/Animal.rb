@@ -17,7 +17,7 @@ class Animal
   end
 
   def zoo
-
+    @zoo
   end
 
   def self.find_by_species
