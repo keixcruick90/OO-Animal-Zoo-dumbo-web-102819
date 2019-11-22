@@ -19,10 +19,8 @@ class Animal
       @@all
   end
 
-  def self.find_by_species (animal_species)
-      self.all.select do |animal_instance|
-      animal_instance.species == animal_species
-      end
+  def self.find_by_species(animal_species)
+      self.all.select { |animal_instance| animal_instance.species == animal_species}
   end
 
 end
