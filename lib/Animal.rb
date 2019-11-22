@@ -1,27 +1,28 @@
+require "pry"
 class Animal
-  @@all = []
+  attr_reader :nickname, :species, :zoo
   attr_accessor :weight
-  attr_reader :species, :nickname
+
+  @@all = []
 
 
-  def initialize(species, weight, nickname)
-    @species = species
-    @weight = weight
-    @nickname = nickname
-
-    @@all << self
+  def initialize (species,nickname, zoo, weight)
+      @species = species
+      @nickname = nickname
+      @weight = weight
+      @zoo = zoo
+      @@all << self
   end
+
 
   def self.all
-    @@all
+      @@all
   end
 
-  def zoo
-    Zoo.all.find { |nickname| zoo.animal == animal.nickname}
-  end
-
-  def self.find_by_species
-    @@all.select { |specie| animal.species == specie}
+  def self.find_by_species (animal_species)
+      self.all.select do |animal_instance|
+      animal_instance.species == animal_species
+      end
   end
 
 end
