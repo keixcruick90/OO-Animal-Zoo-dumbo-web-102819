@@ -17,7 +17,7 @@ class Animal
   end
 
   def zoo
-    @zoo
+    Zoo.all.find { |nickname| zoo.animal == animal.nickname}
   end
 
   def self.find_by_species
